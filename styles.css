@@ -1,0 +1,129 @@
+.container {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    max-width: 620px;
+    border: solid thin;
+    padding: 40px 40px;
+    background-image: linear-gradient(to top, #37ecba 0%, #72afd3 100%);
+    border-radius: 10px;
+  }
+  
+  #sunny {
+    color: rgb(206, 221, 90);
+    font-size: 62px;
+    text-align: center;
+  }
+  
+  li {
+    font-size: 12px;
+    font-family: "Libre Baskerville", serif;
+    display: inline;
+  }
+  
+  ul {
+    padding-left: 0rem;
+  }
+  
+  #weather-today {
+    text-align: center;
+    font-family: "Libre Baskerville", serif;
+  }
+  
+  #weather-city {
+    text-align: center;
+    margin-top: 25px;
+    font-family: "Libre Baskerville", serif;
+  }
+  
+  h1,
+  h2,
+  h3,
+  h5,
+  h6 {
+    color: rgb(55, 87, 102);
+  }
+  
+  #weather-player {
+    padding-top: 3%;
+    padding-bottom: 3%;
+  }
+  .weather-music {
+    text-align: center;
+    font-size: 15px;
+    color: rgb(55, 87, 102);
+    font-family: "Libre Baskerville", serif;
+  }
+  
+  i.fas.fa-play-circle {
+    color: rgb(55, 87, 102);
+    font-size: 30px;
+    position: relative;
+    top: 5px;
+    right: -3px;
+  }
+  
+  form {
+    margin: 20px;
+    text-align: center;
+  }
+  
+  button {
+    background: rgb(92, 145, 170);
+    color: rgb(46, 72, 85);
+    font-weight: 600;
+    border: solid thin;
+    border-color: rgb(79, 116, 133) 270;
+    border-radius: 20px;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+    padding: 6px 12px;
+    transition: all 200ms ease-in-out;
+  }
+  
+  button:hover {
+    background: rgb(79, 124, 146);
+    color: rgb(102, 166, 196);
+  }
+  
+  .weather-gods {
+    font-family: "Shadows Into Light", cursive;
+    font-weight: bold;
+    font-size: 20px;
+  }
+  
+  .card {
+    background-image: radial-gradient(
+      circle 248px at center,
+      #16d9e3 0%,
+      #30c7ec 47%,
+      #46aef7 100%
+    );
+  }
+  
+  .card-text,
+  .card-text-2 {
+    color: rgb(67, 106, 124);
+    text-align: center;
+    font-family: "Libre Baskerville", serif;
+  }
+  
+  .card-text-2 {
+    font-size: 20px;
+    margin-block-end: 0rem;
+  }
+  
+  .card-text {
+    margin-bottom: 0;
+    font-size: 14px;
+  }
+  
+  i#weather.fas.fa-sun,
+  i#weather.fas.fa-cloud-sun.partly-sunny,
+  i#weather.fas.fa-cloud,
+  i#weather.fas.fa-cloud-showers-heavy {
+    display: block;
+    text-align: center;
+    font-size: 27px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: rgb(202, 214, 100);
+  }  
