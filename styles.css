@@ -126,4 +126,8 @@
     padding-top: 5px;
     padding-bottom: 5px;
     color: rgb(202, 214, 100);
-  }  
+  }
+  
+  .github {
+      text-align: center;
+  }
