@@ -39,7 +39,9 @@ let month = months[currentDate.getMonth()];
 h5.innerHTML = `${day}, ${hours}:${minutes}`;
 h6.innerHTML = `${month} ${date}`;
 
+
 function showWeather(response) {
+  console.log(response.data);
   let temperature = document.querySelector("#temperature");
   temperature.innerHTML = Math.round(response.data.main.temp);
   let cityName = document.querySelector("#city-name");
@@ -50,6 +52,8 @@ function showWeather(response) {
   wind.innerHTML = `Wind: ${Math.round(response.data.wind.speed)}mph`;
   let description = document.querySelector("h3");
   description.innerHTML = response.data.weather[0].description;
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute ("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
 }
 
 function convertToFahrenheit(event) {
@@ -63,7 +67,6 @@ fahrenheitLink.addEventListener("click", convertToFahrenheit);
 
 function searchCity(city) {
   let apiKey = "08c89d7c2dd394c882a212087337db19";
-  //let searchInput = document.querySelector("#type-city").value;
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(`${apiUrl}&appid=${apiKey}`).then(showWeather);
 }
