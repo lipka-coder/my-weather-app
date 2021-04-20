@@ -76,14 +76,20 @@
     <i class="fas fa-play-circle"></i>
   </p>
 
-  <div class="row">
-    <form>
-      <input type="text" id="type-city" placeholder="Type a city" />
-      <button type="submit" id="search-button">Search</button>
-    </form>
-    <button id="current-location">Current Location</button>
-  </div>
-
+  <form id="search-form">
+    <div class="row">
+      <div class="col-6">
+        <input type="text" id="type-city" placeholder="Type a city..." class="form-control" />
+      </div>
+      <div class="col-2">
+         <button type="submit" id="search-button">Search</button>
+      </div>
+      <div class="col-4">
+         <button id="current-location">Current Location</button>
+      </div>
+     </div>
+  </form>
+  
   <p class="weather-gods">
     Weather Gods predict in the next 5 days:
   </p>
