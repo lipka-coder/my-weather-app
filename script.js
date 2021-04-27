@@ -36,8 +36,8 @@ let months = [
   "Dec"
 ];
 let month = months[currentDate.getMonth()];
-h5.innerHTML = `${day}, ${hours}:${minutes}`;
-h6.innerHTML = `${month} ${date}`;
+h5.innerHTML = `${day}, ${hours}:${minutes} <br /> <small>${month} ${date}</small>`;
+//h6.innerHTML = `;
 
 
 function showWeather(response) {

@@ -60,11 +60,16 @@
     color: rgb(55, 87, 102);
   }
 
+  h1 {
+    font-size: 40px;
+    margin-top: 20px;
+    margin-bottom: 15px;
+  }
+
   h1,
   h2,
   h3,
-  h5,
-  h6 {
+  h5 {
     color: rgb(55, 87, 102);
   }
   
@@ -155,4 +160,6 @@
   
   .github {
       text-align: center;
+      color: rgb(55, 87, 102);
+      text-decoration: none;
   }
