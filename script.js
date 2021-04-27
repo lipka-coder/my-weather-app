@@ -1,44 +1,42 @@
-let currentDate = new Date();
-let h5 = document.querySelector("#day-time");
-let h6 = document.querySelector("#month-day-number");
+function formatDate(timestamp) {
 
-let date = currentDate.getDate();
-let hours = currentDate.getHours();
-if (hours < 10) {
-  hours = `0${hours}`;
+  let currentDate = new Date(timestamp);
+  let date = currentDate.getDate();
+  let hours = currentDate.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = currentDate.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday"
+  ];
+  let day = days[currentDate.getDay()];
+  let months = [
+   "Jan",
+   "Feb",
+   "Mar",
+   "Apr",
+   "May",
+   "Jun",
+   "Jul",
+   "Aug",
+   "Sep",
+   "Oct",
+   "Nov",
+   "Dec"
+ ];
+ let month = months[currentDate.getMonth()];
+ return `${day}, ${hours}:${minutes} <br /> <small>${month} ${date}</small>`;
 }
-let minutes = currentDate.getMinutes();
-if (minutes < 10) {
-  minutes = `0${minutes}`;
-}
-let days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday"
-];
-let day = days[currentDate.getDay()];
-let months = [
-  "Jan",
-  "Feb",
-  "Mar",
-  "Apr",
-  "May",
-  "Jun",
-  "Jul",
-  "Aug",
-  "Sep",
-  "Oct",
-  "Nov",
-  "Dec"
-];
-let month = months[currentDate.getMonth()];
-h5.innerHTML = `${day}, ${hours}:${minutes} <br /> <small>${month} ${date}</small>`;
-//h6.innerHTML = `;
-
 
 function showWeather(response) {
   console.log(response.data);
@@ -48,6 +46,7 @@ function showWeather(response) {
   let wind = document.querySelector("#wind");
   let description = document.querySelector("h3");
   let iconElement = document.querySelector("#icon");
+  let dateElement = document.querySelector("h5");
 
   celsiusTemperature = response.data.main.temp;  
   
@@ -57,7 +56,7 @@ function showWeather(response) {
   wind.innerHTML = `Wind: ${Math.round(response.data.wind.speed)}mph`;
   description.innerHTML = response.data.weather[0].description;
   iconElement.setAttribute ("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
-
+  dateElement.innerHTML = formatDate(response.data.dt * 1000);
 }
 
 function convertToFahrenheit(event) {
