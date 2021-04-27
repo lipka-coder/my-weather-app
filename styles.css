@@ -46,6 +46,20 @@
     top: -20px;  
   }
 
+  #celsius-link, #fahrenheit-link {
+    text-decoration: none;
+  }
+
+  .active {
+    color: rgb(55, 87, 102);
+    cursor: default;
+  }
+
+  .active:hover {
+    text-decoration: none;
+    color: rgb(55, 87, 102);
+  }
+
   h1,
   h2,
   h3,
