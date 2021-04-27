@@ -83,6 +83,29 @@ fahrenheitLink.addEventListener("click", convertToFahrenheit);
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", convertToCelsius);
 
+function displayForecast () {
+  let forecastElement = document.querySelector("#forecast");
+  let days = ["Wed", "Thu", "Fri", "Sat", "Sun"];
+  let forecastHTML ="";
+  days.forEach(function(day){
+    forecastHTML = forecastHTML + `
+    <div class="card" style="width: 7rem;">
+      <div class="card-body">
+        <p class="card-text">
+          ${day} <br />
+          Feb 10
+        </p>
+        <i class="fas fa-sun" id="weather"></i>
+        <p class="card-text-2"><span class="weather-forecast-temperature-max">15°</span>    <span class="weather-forecast-temperature-min">12°</span></p>
+      </div>
+    </div>`;
+  })
+
+   
+  forecastElement.innerHTML = forecastHTML;
+}
+
+
 function searchCity(city) {
   let apiKey = "08c89d7c2dd394c882a212087337db19";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
@@ -110,13 +133,6 @@ let locationButton = document.querySelector("#current-location");
 locationButton.addEventListener("click", getCurrentPosition);
 
 searchCity("Warsaw");
-//function searchCity(event) {
-// event.preventDefault();
-//let cityInput = document.querySelector("#type-city");
-//let cityElement = document.querySelector("#city-name");
-//cityElement.innerHTML = cityInput.value;
-//}
-//let currentCity = document.querySelector("form");
-//currentCity.addEventListener("submit", searchCity);
 
+displayForecast();
 

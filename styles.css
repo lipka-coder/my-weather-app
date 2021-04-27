@@ -137,13 +137,17 @@
   }
   
   .card-text-2 {
-    font-size: 20px;
+    font-size: 16px;
     margin-block-end: 0rem;
   }
   
   .card-text {
     margin-bottom: 0;
     font-size: 14px;
+  }
+
+  .weather-forecast-temperature-min{
+    opacity: 0.5;
   }
   
   i#weather.fas.fa-sun,
