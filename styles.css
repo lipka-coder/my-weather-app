@@ -9,7 +9,6 @@
   }
   
   #icon {
-    color: rgb(206, 221, 90);
     font-size: 62px;
     text-align: center;
   }
@@ -72,26 +71,7 @@
   h5 {
     color: rgb(55, 87, 102);
   }
-  
-  #weather-player {
-    padding-top: 3%;
-    padding-bottom: 3%;
-  }
-  .weather-music {
-    text-align: center;
-    font-size: 15px;
-    color: rgb(55, 87, 102);
-    font-family: "Libre Baskerville", serif;
-  }
-  
-  i.fas.fa-play-circle {
-    color: rgb(55, 87, 102);
-    font-size: 30px;
-    position: relative;
-    top: 5px;
-    right: -3px;
-  }
-  
+    
   form {
     margin: 20px;
     text-align: center;
@@ -154,4 +134,8 @@
       text-align: center;
       color: rgb(55, 87, 102);
       text-decoration: none;
+  }
+
+  #github-link {
+    color: blueviolet;
   }

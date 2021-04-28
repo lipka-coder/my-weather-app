@@ -57,8 +57,8 @@ function showWeather(response) {
   
   temperature.innerHTML = Math.round(celsiusTemperature);
   cityName.innerHTML = response.data.name;
-  humidity.innerHTML = `Humidity: ${response.data.main.humidity}%`;
-  wind.innerHTML = `Wind: ${Math.round(response.data.wind.speed)}mph`;
+  humidity.innerHTML = `<i class="fas fa-tint"></i> Humidity: ${response.data.main.humidity}%`;
+  wind.innerHTML = `<i class="fas fa-wind"></i> Wind: ${Math.round(response.data.wind.speed)}mph`;
   description.innerHTML = response.data.weather[0].description;
   iconElement.setAttribute ("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
