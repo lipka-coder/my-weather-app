@@ -150,18 +150,6 @@
     opacity: 0.5;
   }
   
-  i#weather.fas.fa-sun,
-  i#weather.fas.fa-cloud-sun.partly-sunny,
-  i#weather.fas.fa-cloud,
-  i#weather.fas.fa-cloud-showers-heavy {
-    display: block;
-    text-align: center;
-    font-size: 27px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    color: rgb(202, 214, 100);
-  }
-  
   .github {
       text-align: center;
       color: rgb(55, 87, 102);

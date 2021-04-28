@@ -90,23 +90,66 @@ fahrenheitLink.addEventListener("click", convertToFahrenheit);
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", convertToCelsius);
 
+function formatDay (timestamp){
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = [
+    "Sun",
+    "Mon",
+    "Tue",
+    "Wed",
+    "Thur",
+    "Fri",
+    "Sat"
+  ];
+
+  return days[day];
+}
+
+function formatMonth (timestamp){
+  let date = new Date(timestamp * 1000);
+  let month = date.getMonth();
+  let months = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+  let monthDay = date.getDate();
+
+  return `${months[month]} ${monthDay}`;
+}
+
 function displayForecast (response) {
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
-  let days = ["Wed", "Thu", "Fri", "Sat", "Sun"];
   let forecastHTML ="";
-  days.forEach(function(day){
+  forecast.forEach(function(forecastDay, index){
+    if (index <5){
     forecastHTML = forecastHTML + `
     <div class="card" style="width: 7rem;">
       <div class="card-body">
         <p class="card-text">
-          ${day} <br />
-          Feb 10
+          ${formatDay(forecastDay.dt)} <br />
+          ${formatMonth(forecastDay.dt)}
         </p>
-        <i class="fas fa-sun" id="weather"></i>
-        <p class="card-text-2"><span class="weather-forecast-temperature-max">15°</span>    <span class="weather-forecast-temperature-min">12°</span></p>
+        <img
+        src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png"
+        alt=""
+        width="42"
+      />        
+      <p class="card-text-2"><span class="weather-forecast-temperature-max">${Math.round(forecastDay.temp.max)}°</span>    <span class="weather-forecast-temperature-min">${Math.round(forecastDay.temp.min)}°</span></p>
       </div>
     </div>`;
-  })
+  }})
 
   forecastElement.innerHTML = forecastHTML;
 }
