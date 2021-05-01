@@ -172,9 +172,12 @@ typeCity.addEventListener("submit", handleSubmit);
 function showPosition(position) {
   let apiKey = "08c89d7c2dd394c882a212087337db19";
   let unit = "metric";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=35&lon=139&appid=${apiKey}&units=${unit}`;
+  let latitude = position.coords.latitude;
+  let longitude = position.coords.longitude;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${unit}`;
   axios.get(`${apiUrl}&appid=${apiKey}`).then(showWeather);
 }
+
 function getCurrentPosition() {
   navigator.geolocation.getCurrentPosition(showPosition);
 }
